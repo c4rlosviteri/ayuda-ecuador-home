@@ -1,0 +1,115 @@
+// imports
+
+@import url('normalize.css')
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700')
+
+// variables
+
+$yellow = #fdd315
+$blue = #27527e
+$black = #222
+
+// mixins
+
+button(c)
+  background c
+  border-radius .25rem
+  border-bottom .25rem solid darken(c, 20%)
+  color white
+  display block
+  font-size 1.5rem
+  margin-top 1rem
+  padding 1rem
+  text-align center
+  text-decoration none
+  text-transform uppercase
+  text-shadow 0 1px 1px rgba(0, 0, 0, .3)
+
+// general
+
+*
+  box-sizing border-box
+
+html
+  color $black
+  font-family 'Roboto', sans-serif
+  font-size 16px
+
+// Classes & tags
+
+.Header
+  &-calltoaction
+    button($blue)
+  &-main
+    padding 2rem
+  &-hamburger
+    position absolute
+    right 2rem
+    top 2rem
+  &-hero
+    background $yellow
+    padding 2rem
+  &-logo
+    display block
+    margin 1rem auto 0 auto
+    width 200px
+  &-lines
+    background $yellow
+    border-radius .125rem
+    height .375rem
+    margin-bottom .375rem
+    width 2.5rem
+    &:last-child
+      margin-bottom 0
+  &-title
+    font-size 1.5rem
+    font-weight 400
+    letter-spacing 1px
+    line-height 2rem
+    margin 0
+    text-align center
+
+.Section
+  padding 2rem
+  &-anchor
+    color $blue
+    font-size 1.25rem
+    display block
+    margin-bottom 2.5rem
+    text-align center
+    text-decoration none
+    width 100%
+    &:after
+      content "▼"
+      color $blue
+      display block
+      text-align center
+  &-iconimg
+    bottom -.5rem
+    margin-right .5rem
+    max-height 2.5rem
+    position relative
+  &-list
+    margin 0
+    padding 0
+    li
+      list-style none
+      margin-left 1rem
+      &:before
+        color $yellow
+        content "✓ "
+  &-subtitle
+    color $blue
+  &-title
+    font-size 1.5rem
+    text-transform uppercase
+
+hr
+  background #ddd
+  border none
+  height 1px
+  margin-top 2rem
+
+.Twitter-container
+  margin-top .5rem
+  text-align center
