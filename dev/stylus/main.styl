@@ -2,8 +2,10 @@
 
 @import url('normalize.css')
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700')
-
+@import 'nib'
 // variables
+
+vendor-prefixes = webkit moz ms official
 
 $yellow = #fdd315
 $blue = #27527e
@@ -42,7 +44,7 @@ hr
   background #ddd
   border none
   height 1px
-  margin-top 2rem
+  margin 2rem 0
 
 .Twitter-container
   margin-top .5rem
@@ -51,17 +53,28 @@ hr
 // Classes & tags
 
 .Header
-  &-calltoaction
-    button($blue)
   &-main
     padding 2rem
   &-hamburger
     position absolute
-    right 2rem
-    top 2rem
-  &-hero
+    right 2.5rem
+    top 2.5rem
+  &-menu
     background $yellow
-    padding 2rem
+    display none
+    // Pilas con la animación
+    margin-bottom 2rem
+    padding 3rem 1rem 1rem 1rem
+  &-list
+    margin 0
+    padding 0
+    text-align center
+    li
+      border-bottom 1px solid white
+      list-style none
+      padding 1rem 0
+      &:last-child
+        border-bottom none
   &-logo
     display block
     margin 1rem auto 0 auto
@@ -74,13 +87,6 @@ hr
     width 2.5rem
     &:last-child
       margin-bottom 0
-  &-title
-    font-size 1.5rem
-    font-weight 400
-    letter-spacing 1px
-    line-height 2rem
-    margin 0
-    text-align center
 
 .Section
   padding 2rem
@@ -96,9 +102,23 @@ hr
       content "▼"
       color $blue
       display block
-      text-align center
+  &-arrow
+    margin-top 1.25rem
+  &-button
+    button($blue)
+  &-category
+    background rgba(0, 0, 0, .05)
+    border-radius .25rem
+    display flex
+    margin-bottom .5rem
+    padding .25rem 1rem 1.5rem 1rem
+    justify-content space-between
+    &:last-child
+      margin-bottom 0
+    h3
+      margin 0
   &-iconimg
-    bottom -.5rem
+    bottom -.75rem
     margin-right .5rem
     max-height 2.5rem
     position relative
@@ -112,8 +132,69 @@ hr
       &:before
         color $yellow
         content "✓ "
+  &-maintitle
+    font-size 1.5rem
+    font-weight 400
+    letter-spacing 1px
+    line-height 2rem
+    margin 0
+    text-align center
+  &-press
+    display block
+    font-size 1.25rem
+    margin 1rem 0
   &-subtitle
     color $blue
   &-title
     font-size 1.5rem
     text-transform uppercase
+
+.Footer
+  margin-top 2rem
+  padding 4rem 2rem 2rem 2rem
+  position relative
+  &-arrow
+    left calc(50% - 2.5rem)
+    max-width 80px
+    top -40px
+    position absolute
+  &-logo
+    display block
+    max-width 200px
+    margin 0 auto
+  &-networks
+    margin 2rem 0 3rem 0
+    position relative
+    text-align center
+    &:after
+      background $blue
+      content ""
+      display block
+      height 2px
+      position absolute
+      top 50%
+      width 100%
+  &-socialimg
+    max-height 80px
+    max-width 80px
+    &:first-child
+      margin-right 1rem
+
+// random Classes
+
+.icon-grande
+  display block
+  margin 1.5rem auto
+  max-width 150px
+
+.map
+  height 320px
+  width 100%
+
+.yellow
+  background $yellow
+
+.center-text
+  text-align center
+
+// ids icons
